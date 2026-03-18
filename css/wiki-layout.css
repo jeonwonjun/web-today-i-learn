@@ -329,10 +329,67 @@ footer {
     border-radius: 12px;
 }
 
-/* 기본 정보 테이블 */
-.info-table { width: 100%; border-collapse: collapse; }
-.info-table th { text-align: left; width: 120px; padding: 10px 0; color: #888; border-bottom: 1px solid #f9f9f9; }
-.info-table td { padding: 10px 0; border-bottom: 1px solid #f9f9f9; }
+/* 기본 정보 섹션 전체 컨테이너 */
+.info-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* 중앙이 아닌 상단 정렬로 변경 */
+    gap: 50px; /* 테이블과 링크 사이의 충분한 간격 */
+    width: 100%;
+}
+
+/* 테이블 교정 */
+.info-table {
+    flex: 1.2; /* 테이블이 차지하는 비율 */
+    border-collapse: collapse;
+    width: 100%; /* 부모 너비를 꽉 채우도록 설정 */
+}
+
+.info-table th {
+    text-align: left;
+    width: 100px; /* 항목 이름 너비를 고정하여 정렬 유지 */
+    padding: 15px 0;
+    color: #a39c91; /* 아이보리 테마에 맞춘 연한 갈색 */
+    border-bottom: 1px solid #f1ede2;
+    font-weight: bold;
+}
+
+.info-table td {
+    padding: 15px 0;
+    color: var(--font-color);
+    border-bottom: 1px solid #f1ede2;
+}
+
+/* 링크 영역 교정 */
+.external-links {
+    flex: 0.8; /* 링크 버튼 영역 비율 */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.link-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    background-color: #ffffff; /* 본문과 동일한 순백색 */
+    border: 1px solid var(--wiki-border);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--font-color);
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+.link-item:hover {
+    background-color: var(--wiki-bg-side); /* 마우스 올리면 베이지색으로 변경 */
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px); /* 살짝 떠오르는 효과 */
+}
 
 /* 모바일 대응: 화면이 좁아지면 세로 1열로 */
 @media (max-width: 1050px) {

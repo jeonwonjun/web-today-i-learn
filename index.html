@@ -1,148 +1,199 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1, width=device-width"/>
+    <meta property="og:title" content="워넬 위키"/>
+    <meta property="og:description" content="전원준의 자기소개 위키입니다."/>
+    <meta property="og:image" content="./images/profile.jpeg"/>
+    <title>워넬 위키 - 우아한테크코스 자기소개</title>
 
-    <!-- TODO: Open Graph 메타 태그를 설정하세요 -->
-    <!-- <meta property="og:title" content="페이지 제목" /> -->
-    <!-- <meta property="og:description" content="페이지 설명" /> -->
-    <!-- <meta property="og:image" content="./images/thumbnail.jpg" /> -->
+    <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="./css/common.css"/>
+    <link rel="stylesheet" href="./css/wiki-layout.css"/>
+    <link rel="stylesheet" href="./css/main.css"/>
 
-    <title>Today I Learn</title>
-    <link rel="stylesheet" href="./css/main.css" />
     <script src="./js/index.js" defer></script>
-  </head>
-  <body>
-    <!-- 상단 내비게이션 -->
-    <nav class="top-nav">
-      <span class="nav-logo">My Page</span>
-      <ul class="nav-links">
-        <li><a href="#about">자기소개</a></li>
-        <li><a href="#gallery">갤러리</a></li>
-        <li><a href="#works">인생 작품</a></li>
-        <li><a href="#til">TIL</a></li>
-      </ul>
-    </nav>
+</head>
+<body>
+<div id="wiki-wrapper">
 
-    <!-- 프로필 히어로 -->
-    <section class="hero" id="about">
-      <div class="profile-card">
-        <div class="profile-image">
-          <!-- TODO: 프로필 이미지를 넣어주세요 -->
-          <!-- <img src="./images/profile.jpg" alt="프로필 사진" /> -->
+    <aside class="side-left">
+        <div class="logo-area">
+            <img src="./images/차 마시는 행성이1.png" alt="차 마시는 행성 로고" class="wiki-logo"/>
+            <h1 class="wiki-title">워넬 위키</h1>
         </div>
-        <div class="profile-info">
-          <h1>닉네임</h1>
-          <p class="tagline">한 줄 소개를 작성해주세요.</p>
-        </div>
-      </div>
-    </section>
+    </aside>
 
-    <main>
-      <!-- 자기소개 -->
-      <section class="content-section">
-        <h2>자기소개</h2>
-        <p>자기소개를 작성해주세요.</p>
-        <!-- TODO: 소개 글 안에 블로그, GitHub 등 관련 링크를 <a> 태그로 연결하세요 -->
-      </section>
+    <main id="main-content">
+        <h1 class="main-nickname">워넬</h1>
+        <hr class="main-divider"/>
 
-      <!-- 기본 정보 -->
-      <section class="content-section" id="info">
-        <h2>기본 정보</h2>
-        <!-- TODO: 자신의 기본 정보를 표(<table>)로 정리하세요 -->
-        <table class="info-table">
-          <tr>
-            <th>이름</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>MBTI</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>취미</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>좋아하는 음식</th>
-            <td></td>
-          </tr>
-        </table>
-      </section>
+        <section class="content-section" id="about">
+            <h2>자기소개</h2>
+            <p>
+                안녕하세요, <strong>워넬</strong>입니다. <br>
+                커피보단 차를 좋아하고, 맛있는 거 먹는 걸 좋아합니다. <br>
+                사람을 좋아해서 이름 외우는 거 잘하고 거리낌 없이 다가갑니다. <br>
+                긍정의 힘을 알기에 긍정적인 분위기를 만들려고 노력합니다. <br>
+                처음에는 잘하지 않지만, 적응력이 좋아 금방 익숙해집니다. <br>
+                <br> 커피챗은 언제든 환영합니다🍵 <br>
+            </p>
+        </section>
 
-      <!-- 나만의 갤러리 -->
-      <section class="content-section" id="gallery">
-        <h2>나만의 갤러리</h2>
-        <p class="section-desc">갤러리 부제를 작성해주세요. (예: 기억에 남는 여행지)</p>
-        <div class="gallery-grid">
-          <!-- TODO: 9장의 이미지를 배치하세요 -->
-          <!--
-          <img src="./images/gallery-1.jpg" alt="갤러리 이미지 1" />
-          <img src="./images/gallery-2.jpg" alt="갤러리 이미지 2" />
-          ...
-          -->
-        </div>
-      </section>
+        <section class="content-section" id="info">
+            <h2>기본 정보</h2>
+            <table class="info-table">
+                <tr>
+                    <th>이름</th>
+                    <td>전원준</td>
+                </tr>
+                <tr>
+                    <th>MBTI</th>
+                    <td>ESFJ</td>
+                </tr>
+                <tr>
+                    <th>취미</th>
+                    <td>여행, 러닝, 맛집 탐방</td>
+                </tr>
+                <tr>
+                    <th>요즘 관심사</th>
+                    <td>기록, 학습, 토론</td>
+                </tr>
+            </table>
+        </section>
 
-      <!-- 나를 울린 인생 작품 -->
-      <section class="content-section" id="works">
-        <h2>나를 울린 인생 작품</h2>
-        <div class="works-list">
-          <!-- TODO: 최소 2가지 작품을 소개하세요 -->
-          <!-- TODO: 작품 중 하나는 <video> 또는 <iframe>으로 영상을 삽입하세요 -->
-          <article class="work-card">
-            <div class="work-thumbnail">
-              <!-- 작품 이미지 -->
+        <section class="content-section" id="gallery">
+            <h2>나만의 갤러리</h2>
+            <article>
+                <p class="subtitle">나의 여정과 기록 : Archive of My Journey</p>
+
+                <div class="gallery-grid">
+                    <img src="./images/인생네컷.JPG" alt="전역한 날"/>
+                    <img src="./images/러닝.jpeg" alt="러닝"/>
+                    <img src="./images/월정리바다.jpeg" alt="23년 월정리바다"/>
+                    <img src="./images/북카페.jpg" alt="북카페"/>
+                    <img src="./images/차.jpeg" alt="북카페-차"/>
+                    <img src="./images/화분.jpeg" alt="북카페-화분"/>
+                    <img src="./images/앉은안친오름.jpeg" alt="안친오름 앉아서"/>
+                    <img src="./images/모들디너.jpeg" alt="모들공간 디너파티"/>
+                    <img src="./images/함덕바다.jpeg" alt="함덕해수욕장 바다"/>
+                </div>
+                <p>위에서부터 오른쪽으로 갑니다.</p>
+
+                <p>1. 첫 혼생네컷입니다. 전역날이라 기분 좋았나봅니다.</p>
+
+                <p>2. 마라톤 준비하며 자주 뛰었었습니다. MZ샷 따라하는 늙은이 같지만 MZ긴 합니다.</p>
+
+                <p>3. 23년도 월정리 바다입니다. 푸른 바다가 너무 예뻤습니다.</p>
+
+                <p>4. 수다떨지 못하는 북카페였습니다. 조용히 책에 집중하기 좋았습니다.</p>
+
+                <p>5. 아이러브눅의 청귤차입니다. 추운 날씨에 밖에서 먹느라 따뜻한 걸 시켰는데 5분만에 다 식어버렸습니다. 사장님이 다시 데워주셨습니다. 감사합니다 사장님</p>
+
+                <p>6. Love.. Love.. Love.. Love..</p>
+
+                <p>7. 웨딩사진 많이 촬영한다는 안친오름입니다. 오름인데 입장료를 내야하는 곳은 처음이었지만 날씨 좋으면 정말 예쁘긴 합니다.</p>
+
+                <p>8. 제주도가면 꼭 가는 게스트하우스가 있습니다. 정말 좋은 사람들을 많이 만나서 아직까지 좋은 인연들을 이어가고 있습니다.</p>
+
+                <p>9. 25년 함덕해수욕장에서 노을질 때 한 장 찍었습니다. 보정이 1도 없는 순수 사진인데 어쩜 하늘이 저렇게 예쁠 수 있을까요? 또 가고싶습니다.</p>
+            </article>
+        </section>
+
+        <section class="content-section" id="works">
+            <h2>나를 울린 인생 작품</h2>
+
+            <ul class="works-list">
+                <li>
+                    <article class="work-card">
+                        <h3>인생 드라마: 사랑의 불시착</h3>
+                        <div class="thumbnail">
+                            <img src="./images/사랑의불시착포스터.jpg" alt="사랑의 불시착 포스터"/>
+                        </div>
+                        <p>
+                            '예기치 못한 상황 속에서도 피어나는 진심'에 대해 깊은 울림을 주었던 작품입니다. <br>
+                            특히 15화 대질 심문 장면에서 서로를 위해 거짓말을 하는 장면에서 눈물을 흘렸습니다. <br>
+                            뭔가 이런 사랑, 희생, 의리 포인트들이 참 감동적인 것 같습니다.
+                        </p>
+                    </article>
+                </li>
+
+                <li>
+                    <article class="work-card">
+                        <h3>요즘 듣는 노래: How Do I Say Goodbye</h3>
+                        <div class="video-container">
+                            <iframe
+                                    src="https://www.youtube.com/embed/2YW_5Bzo9Qg?si=tNCSio2PBsHZuIna"
+                                    title="Dean Lewis - How Do I Say Goodbye"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="no-referrer"
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <p>
+                            요즘 자주 듣는 노래입니다. <br>
+                            "어떻게 작별 인사를 해야 할까"라는 물음은 결국 그 사람과의 기억을 어떻게 내 삶의 일부로 남길 것인가에 대한 고민이기도 합니다. <br>
+                            주변에 있는 사람들을 당연하게 생각하지 않고 소중하게 여기게 되는 것 같아요.
+                        </p>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+        <section class="content-section" id="til-section">
+            <h2>TIL (Today I Learned)</h2>
+            <div class="til-input-container">
+                <form id="til-form">
+                    <div class="form-row">
+                        <div class="form-group date-group">
+                            <label for="til-date">날짜</label>
+                            <input type="date" id="til-date" required/>
+                        </div>
+                        <div class="form-group title-group">
+                            <label for="til-title">제목</label>
+                            <input type="text" id="til-title" placeholder="학습 주제" required/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="til-content">내용</label>
+                        <textarea id="til-content" rows="2" placeholder="오늘 배운 내용을 입력하세요" required></textarea>
+                    </div>
+                    <div class="button-group">
+                        <button type="submit" class="btn-submit">등록</button>
+                        <button type="reset" class="btn-reset">초기화</button>
+                    </div>
+                </form>
             </div>
-            <div class="work-info">
-              <h3>작품 제목</h3>
-              <p>작품에 대한 설명을 작성해주세요.</p>
-            </div>
-          </article>
-        </div>
-      </section>
+            <div id="til-list"></div>
+        </section>
 
-      <!-- TIL (Today I Learned) -->
-      <section class="content-section" id="til">
-        <h2>TIL</h2>
-        <p class="section-desc">오늘 새롭게 배운 것들을 기록합니다.</p>
-
-        <!-- TIL 작성 폼 -->
-        <form class="til-form" id="til-form">
-          <div class="form-group">
-            <label for="til-date">날짜</label>
-            <input type="date" id="til-date" name="date" required />
-          </div>
-          <div class="form-group">
-            <label for="til-title">제목</label>
-            <input type="text" id="til-title" name="title" placeholder="학습 주제를 입력하세요" required />
-          </div>
-          <div class="form-group">
-            <label for="til-content">내용</label>
-            <textarea id="til-content" name="content" placeholder="오늘 배운 내용을 정리해주세요" required></textarea>
-          </div>
-          <div class="form-actions">
-            <button type="submit">등록</button>
-            <button type="reset">초기화</button>
-          </div>
-        </form>
-
-        <!-- TIL 목록: 폼으로 등록하면 여기에 항목이 추가됩니다 -->
-        <div class="til-list" id="til-list">
-          <!-- 아래는 예시 항목입니다. 자유롭게 수정하거나 삭제하세요 -->
-          <article class="til-item">
-            <time>2026-03-15</time>
-            <h3>HTML 시멘틱 태그</h3>
-            <p>header, nav, main, section, article, footer 등 시멘틱 태그의 역할과 사용법을 배웠다.</p>
-          </article>
-        </div>
-      </section>
-
+        <footer>
+            <img src="./images/footer_logo.jpg" width="180" alt="우아한테크코스 로고">
+            <p>&copy; Copyright © 우아한테크코스. All rights reserved.</p>
+        </footer>
     </main>
 
-    <footer>
-      <p>&copy; My Page</p>
-    </footer>
-  </body>
+    <aside class="side-right">
+        <div class="sticky-container">
+            <div class="profile-box">
+                <div class="profile-img-container">
+                    <img src="./images/profile.jpeg" alt="전원준 프로필 사진"/>
+                </div>
+                <p class="profile-caption">제주도 안친오름에서 찰칵 📸</p>
+            </div>
+            <nav class="contents-nav">
+                <h3><a href="#wiki-wrapper" class="contents-top-link">Contents</a></h3>
+                <ol class="auto-numbered-list">
+                    <li><a href="#about">자기소개</a></li>
+                    <li><a href="#info">기본 정보</a></li>
+                    <li><a href="#gallery">나만의 갤러리</a></li>
+                    <li><a href="#works">인생 작품</a></li>
+                    <li><a href="#til-section">TIL</a></li>
+                </ol>
+            </nav>
+        </div>
+    </aside>
+</div>
+</body>
 </html>

@@ -1,371 +1,322 @@
-/* 상단 내비게이션 */
-.top-nav {
-  position: sticky;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 32px;
-  height: 56px;
-  background-color: var(--nav-bg-color);
-  border-bottom: 1px solid var(--divider-color);
-  z-index: 10;
+#wiki-wrapper {
+    display: grid;
+    /* 왼쪽 사이드바 고정, 본문 유동적, 오른쪽 사이드바 고정 */
+    grid-template-columns: 240px 1fr 350px;
+    width: 100%;       /* 가로 너비를 100%로 설정 */
+    max-width: none;   /* 기존의 1400px 제한을 해제합니다 */
+    margin: 0;         /* 중앙 정렬을 위한 여백 제거 */
+    min-height: 100vh; /* 화면 전체 높이를 채우도록 설정 */
+    background-color: #f7f7f7; /* 사이드바 배경색과 동일하게 설정 */
+}
+.side-left {
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    padding: 60px 10px;
+    border-right: 1px solid #eee;
+    background-color: #f7f7f7; /* 왼쪽 사이드바 색상 */
 }
 
-.nav-logo {
-  font-family: "Jua", serif;
-  font-size: 1.4rem;
-  color: var(--primary-color);
+/* 본문 영역이 너무 퍼져 보이지 않게 안쪽 여백을 넉넉히 줍니다 */
+#main-content {
+    padding: 60px 80px; /* 양옆 패딩을 조금 더 늘리면 가독성이 좋아집니다 */
+    background-color: #ffffff;
+    min-height: 100vh;
 }
 
-.nav-links {
-  display: flex;
-  gap: 24px;
-  list-style: none;
+.side-right {
+    padding: 60px 15px;
+    border-left: 1px solid #eee;
+    background-color: #f7f7f7; /* 오른쪽 사이드바 색상 */
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: var(--font-default-color);
-  font-size: 0.9rem;
-  transition: color 0.2s;
+/* 오른쪽 사이드바 고정(Sticky) 설정 */
+.sticky-container {
+    position: sticky;
+    top: 20px; /* 스크롤 시 상단 여백 */
+    display: flex;
+    flex-direction: column;
 }
 
-.nav-links a:hover {
-  color: var(--primary-color);
+footer {
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--page-padding-top);
+    align-items: center;
+    margin: 24px;
 }
 
-/* 프로필 히어로 */
-.hero {
-  display: flex;
-  justify-content: center;
-  padding: 64px 32px;
-  background-color: var(--hero-bg-color);
+/* 로고 및 타이틀 */
+.logo-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 로고와 글자를 세로로 나열하며 중앙 정렬 */
+    text-align: center;
 }
 
-.profile-card {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  max-width: 600px;
+.wiki-logo {
+    width: 210px;
+    height: auto;
+    margin-bottom: 15px;
 }
 
-.profile-image {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  background-color: #ddd;
-  flex-shrink: 0;
-  overflow: hidden;
+.wiki-title {
+    font-size: 1.8rem;
+    font-family: "Jua";
 }
 
-.profile-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/* 메인 닉네임 */
+.main-nickname { font-size: 2.3rem; font-family: "Jua"; margin-bottom: 10px; }
+.main-divider { border: 0; border-top: 1px solid #eee; margin-bottom: 40px; }
+
+/* 본문 섹션 */
+.content-section { margin-bottom: 60px; }
+.content-section h2 { font-size: 1.8rem; font-family: "Jua"; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+.content-section .subtitle {
+    font-size: 1rem;
+    color: #666; /* 본문보다 약간 연한 회색 */
+    margin-top: -10px; /* 제목(h2)과의 간격을 좁히고 싶을 때 조절 */
+    margin-bottom: 25px; /* 아래 그리드와의 간격 */
+    font-weight: 400;
 }
 
-.profile-info h1 {
-  font-size: 2rem;
-  margin-bottom: 8px;
-}
-
-.profile-info .tagline {
-  color: #777;
-  line-height: 1.6;
-}
-
-/* 메인 콘텐츠 */
-main {
-  max-width: 780px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-.content-section {
-  padding: 48px 0;
-  border-bottom: 1px solid var(--divider-color);
-}
-
-.content-section:last-child {
-  border-bottom: none;
-}
-
-.content-section h2 {
-  font-size: 1.6rem;
-  margin-bottom: 16px;
-}
-
-.content-section > p,
-.section-desc {
-  color: #666;
-  line-height: 1.8;
-  margin-bottom: 24px;
-}
-
-/* 갤러리 그리드 */
+/* 갤러리 그리드 전체 너비 제한 및 중앙 정렬 */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  width: 600px; /* 기존보다 더 넓게 */
+  margin: 20px auto;
 }
 
+/* 갤러리 이미지: 잘리지 않게 조정 */
 .gallery-grid img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 4px;
+    width: 100%;
+    aspect-ratio: 1/1; /* 정사각형 셀 유지 */
+    object-fit: cover; /* 중요: 잘리지 않고 원본 비율을 유지하며 셀 내에 중앙 배치됩니다. */
+    border-radius: 8px; /* 부드러운 테두리 유지 */
+    background: #f0f0f0; /* contain으로 인해 생기는 여백을 채웁니다. */
 }
 
-/* 인생 작품 카드 */
-.works-list {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+/* 사이드바 프로필 */
+.profile-box img { width: 100%; border-radius: 12px; border: 1px solid #eee; }
+.profile-caption { text-align: center; font-size: 0.9rem; color: #666; margin-top: 10px; }
+
+/* Contents 네비게이션 간격 및 번호 설정 */
+.contents-nav {
+    margin-top: 40px; /* 프로필 사진과의 간격 확보 */
 }
 
-.work-card {
-  display: flex;
-  gap: 20px;
-  padding: 20px;
-  border-radius: 8px;
-  background-color: var(--card-bg-color);
+.contents-top-link {
+    text-decoration: none; /* 밑줄 제거 */
+    color: inherit;       /* 기존 h3 색상 유지 */
+    cursor: pointer;      /* 마우스 커서를 손가락 모양으로 */
 }
 
-.work-thumbnail {
-  width: 140px;
-  height: 180px;
-  background-color: #ddd;
-  border-radius: 4px;
-  flex-shrink: 0;
-  overflow: hidden;
+.contents-top-link:hover {
+    color: #2ac1bc;       /* 마우스를 올렸을 때만 포인트 컬러로 변경 (선택 사항) */
 }
 
-.work-thumbnail img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.contents-nav h3 {
+    font-family: "Jua";
+    font-size: 1.4rem;
+    margin-bottom: 15px;
 }
 
-.work-info h3 {
-  font-size: 1.2rem;
-  margin-bottom: 8px;
+.auto-numbered-list {
+    padding-left: 20px;
+    list-style-type: decimal; /* 자동으로 1, 2, 3... 번호 부여 */
 }
 
-.work-info p {
-  color: #666;
-  line-height: 1.6;
+.auto-numbered-list li {
+    margin-bottom: 10px;
+}
+
+.auto-numbered-list a {
+    text-decoration: none;
+    color: #555;
+    transition: color 0.2s;
+}
+
+.auto-numbered-list a:hover {
+    color: #2ac1bc;
+    text-decoration: underline;
 }
 
 /* TIL */
-.til-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+/* TIL 섹션 전체 컨테이너 */
+.til-input-container {
+    background-color: #f8f9fa; /* 연한 회색 배경 */
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 40px;
 }
 
-.til-item {
-  padding: 20px;
-  border-left: 3px solid var(--primary-color);
-  background-color: var(--card-bg-color);
-  border-radius: 0 8px 8px 0;
+.form-group {
+    margin-bottom: 20px;
 }
 
-.til-item time {
-  font-size: 0.85rem;
-  color: #999;
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #444;
 }
 
-.til-item h3 {
-  font-size: 1.1rem;
-  margin: 8px 0;
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 0.95rem;
 }
 
-.til-item p {
-  color: #666;
-  line-height: 1.6;
+/* 버튼 그룹 정렬 */
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
 }
 
-/* 방명록 */
-.comment-form-container form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 32px;
+.btn-submit {
+    background-color: #2ac1bc; /* 워넬 위키 민트색 */
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
 }
 
-.comment-form-container input,
-.comment-form-container textarea {
-  padding: 12px;
-  border: 1px solid var(--divider-color);
-  border-radius: 6px;
-  font-family: inherit;
-  font-size: 0.95rem;
+.btn-submit:hover {
+    background-color: #25a8a4;
 }
 
-.comment-form-container textarea {
-  min-height: 80px;
-  resize: vertical;
+.btn-reset {
+    background-color: white;
+    color: #666;
+    padding: 10px 25px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
-.comment-buttons {
-  display: flex;
-  gap: 8px;
-  justify-content: flex-end;
+.btn-reset:hover {
+    background-color: #f1f1f1;
 }
 
-.comment-buttons button {
-  padding: 8px 20px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.9rem;
+/* TIL 섹션: 가로는 꽉 차게, 높이는 슬림하게 */
+.til-input-container, .til-card {
+    width: 100%; /* 본문 너비에 맞춤 */
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
 }
 
-.comment-buttons button[type="button"] {
-  background-color: var(--primary-color);
-  color: #fff;
+.til-input-container {
+    background-color: #f8f9fa;
+    padding: 15px 20px; /* 위아래 패딩 축소 */
+    border-radius: 12px;
+    margin-bottom: 25px;
 }
 
-.comment-buttons button[type="reset"] {
-  background-color: #eee;
-  color: #666;
+/* 날짜와 제목을 한 줄에 배치하여 높이 절약 */
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+.date-group { flex: 1; }
+.title-group { flex: 3; }
+
+.form-group { margin-bottom: 8px; }
+.form-group label { font-size: 0.85rem; margin-bottom: 3px; }
+
+.form-group input,
+.form-group textarea {
+    padding: 8px 12px;
+    font-size: 0.9rem;
 }
 
-.comment-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.button-group { margin-top: 10px; }
+
+/* TIL 카드 디자인 축소 */
+.til-card {
+    padding: 15px 20px; /* 내부 여백 축소 */
+    margin-bottom: 12px; /* 카드 사이 간격 축소 */
+    border-left: 4px solid #2ac1bc;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-.comment-item {
-  padding: 16px;
-  background-color: var(--card-bg-color);
-  border-radius: 8px;
+.card-date { font-size: 0.8rem; margin-bottom: 4px; }
+.card-title { font-size: 1.05rem; margin-bottom: 5px; }
+.card-content { font-size: 0.9rem; line-height: 1.5; }
+
+/* 목록 스타일 초기화 및 간격 조정 */
+.works-list {
+    list-style: none; /* 불렛 제거 */
+    padding: 0;
 }
 
-.comment-item strong {
-  font-size: 0.9rem;
-  color: var(--primary-color);
+.works-list > li {
+    margin-bottom: 50px; /* 작품 사이 간격 */
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 30px;
 }
 
-.comment-item p {
-  margin-top: 6px;
-  color: #555;
-  line-height: 1.6;
+.works-list > li:last-child {
+    border-bottom: none;
 }
 
-/* 푸터 */
-footer {
-  text-align: center;
-  padding: 32px;
-  color: #aaa;
-  font-size: 0.85rem;
+/* 이미지 크기 조정 */
+.thumbnail img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+/* 유튜브 iframe 반응형 설정 */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 비율 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 12px;
 }
 
 /* 기본 정보 테이블 */
-.info-table {
-  width: 100%;
-  border-collapse: collapse;
-}
+.info-table { width: 100%; border-collapse: collapse; }
+.info-table th { text-align: left; width: 120px; padding: 10px 0; color: #888; border-bottom: 1px solid #f9f9f9; }
+.info-table td { padding: 10px 0; border-bottom: 1px solid #f9f9f9; }
 
-.info-table th,
-.info-table td {
-  padding: 12px 16px;
-  border-bottom: 1px solid var(--divider-color);
-  text-align: left;
-}
-
-.info-table th {
-  width: 140px;
-  color: #555;
-  font-weight: 700;
-  background-color: var(--card-bg-color);
-}
-
-.info-table td {
-  color: #333;
-}
-
-/* TIL 작성 폼 */
-.til-form {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  padding: 24px;
-  margin-bottom: 32px;
-  border: 1px solid var(--divider-color);
-  border-radius: 8px;
-  background-color: var(--card-bg-color);
-}
-
-.til-form .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.til-form label {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #555;
-}
-
-.til-form input,
-.til-form textarea {
-  padding: 10px 12px;
-  border: 1px solid var(--divider-color);
-  border-radius: 6px;
-  font-family: inherit;
-  font-size: 0.95rem;
-}
-
-.til-form textarea {
-  min-height: 80px;
-  resize: vertical;
-}
-
-.til-form .form-actions {
-  display: flex;
-  gap: 8px;
-  justify-content: flex-end;
-}
-
-.til-form button {
-  padding: 8px 20px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.9rem;
-}
-
-.til-form button[type="submit"] {
-  background-color: var(--primary-color);
-  color: #fff;
-}
-
-.til-form button[type="reset"] {
-  background-color: #eee;
-  color: #666;
-}
-
-/* 영상 삽입 */
-.work-card iframe,
-.work-card video {
-  width: 100%;
-  max-width: 480px;
-  aspect-ratio: 16 / 9;
-  border: none;
-  border-radius: 4px;
-}
-
-/* 변수 */
-:root {
-  --primary-color: #4a7c59;
-  --nav-bg-color: #fff;
-  --hero-bg-color: #f8faf8;
-  --card-bg-color: #fafafa;
-  --divider-color: #e8e8e8;
-  --font-default-color: #333;
+/* 모바일 대응: 화면이 좁아지면 세로 1열로 */
+@media (max-width: 1050px) {
+    #wiki-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .side-left, .side-right {
+        border: none;
+        padding: 20px;
+    }
 }

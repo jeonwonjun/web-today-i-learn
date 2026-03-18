@@ -153,10 +153,6 @@ footer {
     margin-bottom: 40px;
 }
 
-.form-group {
-    margin-bottom: 20px;
-}
-
 .form-group label {
     display: block;
     font-weight: bold;
@@ -164,14 +160,42 @@ footer {
     color: #444;
 }
 
+/* main.css */
+
+/* 날짜와 제목을 한 줄에 배치하는 컨테이너 */
+.form-row {
+    display: flex;
+    gap: 15px; /* 입력창 사이의 확실한 간격 */
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+/* 각각의 입력 그룹(라벨+인풋)이 차지하는 비율 */
+.date-group {
+    flex: 3; /* 날짜창은 적당한 크기로 */
+    min-width: 150px;
+}
+.title-group {
+    flex: 3; /* 제목창은 길게 */
+}
+
+/* 모든 입력 요소가 부모 너비를 넘지 않도록 설정 */
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 12px 15px;
+    box-sizing: border-box; /* 패딩이 너비에 영향을 주지 않게 함 */
     border: 1px solid #ddd;
-    border-radius: 10px;
-    font-family: inherit;
-    font-size: 0.95rem;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+/* 반응형: 화면이 아주 좁아지면 세로로 나열 */
+@media (max-width: 500px) {
+    .form-row {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
 /* 버튼 그룹 정렬 */

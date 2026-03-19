@@ -347,7 +347,7 @@ footer {
 
 .info-table th {
     text-align: left;
-    width: 100px; /* 항목 이름 너비를 고정하여 정렬 유지 */
+    width: 150px; /* 항목 이름 너비를 고정하여 정렬 유지 */
     padding: 15px 0;
     color: #a39c91; /* 아이보리 테마에 맞춘 연한 갈색 */
     border-bottom: 1px solid #f1ede2;
